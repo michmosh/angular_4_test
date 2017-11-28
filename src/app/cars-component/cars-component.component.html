@@ -1,0 +1,13 @@
+<h2>cars</h2>
+<ul>
+  <li *ngFor="let car of cars">{{car.type}} has {{car.wheels}}</li>
+</ul>
+  <h2> users</h2>
+<ul>
+  <li *ngFor="let user of users">
+    <label >name: </label> {{user.name}} ,
+    <label>email: </label> {{user.email}} ,
+    <label>address: </label> {{user.address.street}} ,{{user.address.suite}} , 
+    <label>phone: </label> {{user.phone}}
+ </li>
+</ul>

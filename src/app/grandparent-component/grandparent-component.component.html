@@ -1,0 +1,19 @@
+
+<h2> ex 2 </h2>
+<label>name</label> <input #uName type="text" [value]="user.name"   (input)="name=uName.value" /><br>
+<label>age</label> <input #uAge type="text" [value]="user.age == 0 ? '' : user.age "  (input)="age=uAge.value" /><br>
+<label>license</label>
+<input type="checkbox" #license [value]="user.hasDrivingLicense" (change)="hasDrivingLicense=!hasDrivingLicense"/><br>
+<select class="select" #Scity [value]="user.city" (change)="setCity(Scity.value)">
+  <option value ='tel aviv'>Tel Aviv</option> 
+  <option value ='haifa'>haifa</option> 
+  <option value ='hadera'>hadera</option> 
+  <option value ='ber sheva'>ber sheva</option>  
+</select>
+ <button (click)="createUser()"> create</button>
+ <app-parent-component [data]='data' [users]='users' (textData)='getText($event)' (outputUser)='getUser($event)'></app-parent-component>
+
+ <h2>ex 3 </h2>
+ {{textFromChild}}
+ 
+

@@ -1,0 +1,24 @@
+
+{{data}}<Br><br>
+
+<div *ngFor='let user of users' class="user-div">
+    hello im <input type="text" #uName [value]='user.name' (keyup)='sendUser(uName.value ,uAge.value ,user.hasDrivingLicense, uCity.value)' > <br>
+    i am <input type="text" #uAge [value]='user.age' (keyup)='sendUser(uName.value ,uAge.value ,user.hasDrivingLicense, uCity.value)'>  years old <br>
+    and i <span *ngIf="user.hasDrivingLicense == true"> have</span>
+          <span  *ngIf="user.hasDrivingLicense == false"> dont have </span> a driving lisence<br>
+
+    i live in
+     <select #uCity [value]="user.city" (change)="sendUser(uName.value ,uAge.value ,user.hasDrivingLicense, uCity.value)" >
+       <option value='tel aviv'>tel aviv</option>
+       <option value='haifa'>haifa</option>
+       <option value='ber sheva'>ber sheva</option>
+       <option value='hadera'>hadera</option>
+     </select>
+
+</div>
+
+<label class="label"> ex  3 copy text to parent</label><br>
+<input #input type="text" [value]='text' (keyup)='text=input.value' />
+<button class="button" (click)="sendText()">copy to parent</button>
+
+
